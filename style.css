@@ -1,12 +1,86 @@
-.titulo-principal{
+.titulo-principal {
     padding-left: 0px;
 }
 
-#banner{
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+  
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+display: block;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+background-color: #0004ff;
+color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+display: none;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #0415ff;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+#banner {
     width:100%;
 }
 
-.principal{
+.principal {
     background: #000000;
     padding: 10px;
 }
@@ -15,10 +89,13 @@
     text-align: center;
 }
 
-p{
+p {
     text-align: center;
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica;
     background: #000000;
+    color: #ffffff;
+    font-size: 21px;
+    word-wrap:normal;
 }
 h1 {
     color: rgb(0, 0, 0);
@@ -29,35 +106,35 @@ h2 {
 body {
     color: rgb(255, 255, 255);
     font-size: 21px;
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica;
   }
-em strong{
+em strong {
     color:rgb(255, 255, 255);
     font-size: 21px;
 }
 
-#mision{
+#mision {
     font-size: 21px;
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica;
 }
 
-.diferenciales{
+.diferenciales {
     background: #000000;
     padding: 20px;
 }
 
-.items{
-    font-family: Helvetica, sans-serif;
+.items {
+    font-family: Helvetica, sans-ser;
 }
 
-ul{
+ul {
     display: inline-block;
     vertical-align: top;
     width: 20%;
     margin-right: 15%;
 }
 
-.imagenDiferenciales{
+.imagenDiferenciales {
     width: 50%;
 }
 
