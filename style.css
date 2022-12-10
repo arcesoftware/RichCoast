@@ -1,0 +1,63 @@
+.titulo-principal{
+    padding-left: 0px;
+}
+
+#banner{
+    width:100%;
+}
+
+.principal{
+    background: #000000;
+    padding: 10px;
+}
+
+.titulo-centralizado{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    background: #000000;
+}
+h1 {
+    color: rgb(0, 0, 0);
+  }
+h2 {
+    color: rgb(0, 0, 0);
+  }
+body {
+    color: rgb(255, 255, 255);
+    font-size: 21px;
+    font-family: Helvetica, sans-serif;
+  }
+em strong{
+    color:rgb(255, 255, 255);
+    font-size: 21px;
+}
+
+#mision{
+    font-size: 21px;
+    font-family: Helvetica, sans-serif;
+}
+
+.diferenciales{
+    background: #000000;
+    padding: 20px;
+}
+
+.items{
+    font-family: Helvetica, sans-serif;
+}
+
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.imagenDiferenciales{
+    width: 50%;
+}
+
