@@ -6,10 +6,12 @@
 /* Add a black background color to the top navigation */
 .topnav {
     float: left !important;
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(77, 74, 74);
     overflow: hidden;
-    width: 100%;
-
+    width: 99%;
+    padding: 3px;
+    margin-top: 10px; 
+    margin-bottom: 0px;
 }
   
 /* Style the links inside the navigation bar */
@@ -78,6 +80,8 @@ display: none;
 
 #banner {
     width:100%;
+    margin-top: 0px; 
+    margin-bottom: 0px;
 }
 
 .principal {
@@ -85,6 +89,8 @@ display: none;
     padding: 10px;
     word-wrap:normal;
     text-align: center;
+    margin-top: 0px; 
+    margin-bottom: 0px;
 }
 
 .titulo-centralizado{
@@ -92,12 +98,13 @@ display: none;
 }
 
 p {
-    text-align: center;
     font-family: Helvetica;
     background: #000000;
     color: #ffffff;
     font-size: 21px;
     word-wrap:normal;
+    text-align: center;
+    margin-top: 0px;
 }
 h1 {
     color: rgb(0, 0, 0);
