@@ -1,61 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="es">
-    
     <head>
         <meta charset="UTF-8"> 
-        <title>Rich Coast</title>
+        <title>Julia Set Generator</title>
         <link rel="stylesheet" href="style.css">
-    
     </head>
-
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="style.css"> 
-    <div class="topnav" id="myTopnav">
-        <a href="#INICIO" class="active">INICIO</a>
-        <a href="#ANIMACIONES">ANIMACIONES</a>
-        <a href="#TIENDA">TIENDA</a>
-        <a href="#CONTACTO">CONTACTO</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-        </div>
-
     <body>
-
-        <div class="principal"></div>
-
-        <img id="banner" src="banner/banner.jpg">
-        
+        <div class="topnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#generator">Generator</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </div>
-
         <div class="principal">
-
-            <h2 class="titulo-centralizado">Conozca la tecnologia de Rich Coast</h2>
-
-            <p>El estudio de animación <strong>Rich Coast</strong> es el creador del programa "El SHOW de la NOCHE con Facundo Arce"</p>
-
-            <p id="mision"><em>Vea los episodios completos de "El SHOW de la NOCHE": <strong><a href="https://www.youtube.com/@richcoast">Rich Coast</a></strong></em></p>
-
-            <p>Facundo Arce trae su sátira y comedia características a El SHOW de la NOCHE con Facundo Arce, el programa número 1 en la noche, donde habla con una mezcla ecléctica de invitados sobre lo que es nuevo y relevante en el mundo de la política, el entretenimiento.</p> 
-
+            <h2 class="titulo-centralizado">Julia Set Image Generator</h2>
+            <p>Explore the beauty of Julia sets with our interactive generator. Adjust the parameters to create unique and intricate images.</p>
+            <form>
+                <label for="c-value">c value:</label>
+                <input type="text" id="c-value" name="c-value">
+                <label for="iterations">Iterations:</label>
+                <input type="text" id="iterations" name="iterations">
+                <input type="submit" value="Generate">
+            </form>
+            <div id="output">
+                <!-- Image will be rendered here -->
+            </div>
         </div>
-
-        <div class="diferenciales">
-
-            <h3 class="titulo-centralizado">Entrevistas con:</h3>
-        
-            <ul>
-                <li class="items">músicos</li>
-                <li class="items">actores</li>
-                <li class="items">políticos y negociantes</li>
-                <li class="items">cientificos y más</li>
-            </ul>
-
-            <img src="diferenciales/diferenciales.jpg" class="imagenDiferenciales">
-
-        </div>
-        
-        
+        <script src="julia.js"></script>
     </body>
 </html>
