@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
-        <meta charset="UTF-8"> 
+        <meta charset="UTF-8">
         <title>Julia Set Generator</title>
         <link rel="stylesheet" href="style.css">
     </head>
@@ -16,16 +16,73 @@
             <h2 class="titulo-centralizado">Julia Set Image Generator</h2>
             <p>Explore the beauty of Julia sets with our interactive generator. Adjust the parameters to create unique and intricate images.</p>
             <form>
-                <label for="c-value">c value:</label>
-                <input type="text" id="c-value" name="c-value">
+                <label for="seed-value">Seed Value:</label>
+                <input type="text" id="seed-value" name="seed-value" value="-0.512511498387847167, 0.521295573094847167">
                 <label for="iterations">Iterations:</label>
-                <input type="text" id="iterations" name="iterations">
-                <input type="submit" value="Generate">
+                <input type="text" id="iterations" name="iterations" value="99999">
+                <input type="submit" value="Generate" onclick="generateJuliaSet()">
             </form>
             <div id="output">
                 <!-- Image will be rendered here -->
             </div>
         </div>
-        <script src="julia.js"></script>
+        <script src="pyodide.js"></script>
+        <script>
+            // Initialize Pyodide
+            languagePluginLoader.then(() => {
+                // Run the Python script
+                const seed_value = document.getElementById("seed-value").value;
+                const max_iterations = document.getElementById("iterations").value;
+                const julia_set = window.pyodide.runPython(`
+                    from itertools import product
+                    import numpy as np
+                    import cv2
+
+                    # Define the seed value for the Julia set
+                    seed_value = complex(${seed_value})
+                    max_iterations = ${max_iterations}
+
+                    # Define the escape time function for the Julia set
+                    def escape_time(c):
+                        z = c
+                        for i in range(max_iterations):
+                            z = z*z + seed_value
+                            if abs(z) > 2:
+                                return i, int(i*255/256), int(i*255/256), int(i*255/256)
+                        return max_iterations,0, 0, 0
+
+                    # Define the function to generate the Julia set
+                    def generate_julia(coord):
+                        x,y = coord
+                        julia_set = np.zeros((800, 800, 4), dtype=np.uint8)
+                        for x, y in product(range(x, x+800), range(y, y+800)):
+                            c = complex(x/256, y/256)
+                            julia_set[x+400, y+400] = escape_time(c)
+                        return julia_set
+
+                    # Create a pool of worker processes
+                    with Pool() as p:
+                        # Divide the x and y ranges into chunks and generate the Julia set in parallel
+                        julia_set = np.vstack(p.imap_unordered(generate_julia, ((x, y) 
+                            for x in range(-400, 400, 800) for y in range(-400, 400, 800)), chunksize=1))
+
+                    # Remove the alpha channel of the image
+                    julia_set = julia_set[:,:,:3]
+
+                    # Apply jet colormap to the Julia set
+                    jet_map = cv2.applyColorMap(julia_set, cv2.COLORMAP_JET)
+
+                    #save the image using OpenCV
+                    cv2.imwrite("julia_set.png", julia_set)
+                    cv2.imwrite("julia_set_jet.png", jet_map)
+
+                    julia_set
+                `);
+                // Display the generated image
+                const img = new Image();
+                img.src = julia_set.data;
+                document.getElementById("output").appendChild(img);
+            }
+        </script>
     </body>
 </html>
