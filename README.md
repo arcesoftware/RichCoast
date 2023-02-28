@@ -1,2 +1,2 @@
-# RichCoast
-This repository contains all the files and folders needed to launch your basic HTML site 
+# Rich Coast Labs
+Este repositorio contiene archivos de los modelos AI de Rich Coast 
